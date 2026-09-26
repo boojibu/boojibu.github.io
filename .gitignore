@@ -8,3 +8,6 @@ vendor/
 # JetBrains IDE settings
 .idea/
 *.iml
+
+# GitHub Pages manages its own dependency versions
+Gemfile.lock
