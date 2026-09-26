@@ -4,6 +4,7 @@
 
 ## 배포
 
+GitHub Free의 공개 저장소와 GitHub Pages를 사용합니다.
 저장소 Settings → Pages에서 Deploy from a branch / main / (root)를 사용합니다.
 main에 변경 사항이 반영되면 https://boojibu.github.io 에 자동 배포됩니다.
 로컬에서 수정·검증·커밋한 뒤 사용자가 검토합니다. 사용자가 해당 변경의 푸시를 명시적으로 요청한 경우에만 main으로 푸시하고, Actions에서 Check blog build와 Pages 배포 성공 여부를 확인합니다.
@@ -20,6 +21,23 @@ main에 변경 사항이 반영되면 https://boojibu.github.io 에 자동 배�
 이미지는 assets/images/에 추가하고 /assets/images/파일명 경로로 연결하세요.
 
 templates는 사이트 배포에서 제외됩니다. 실제 경험을 바탕으로 첫 글을 작성하기 전까지 홈에는 준비 중 안내가 표시됩니다.
+
+## 커밋 규칙
+
+커밋 제목은 `<type>: <변경 내용>` 형식을 사용합니다. 필요한 경우 `<type>(<scope>): <변경 내용>`으로 범위를 표시합니다.
+
+| type | 사용 범위 |
+| --- | --- |
+| `docs` | 글·초안 작성과 수정, README·작성 안내 변경 |
+| `feat` | 검색·탐색 등 블로그 기능 추가 |
+| `fix` | 잘못된 동작이나 표시 오류 수정 |
+| `refactor` | 동작을 유지하는 코드 구조 개선 |
+| `style` | 동작 변경 없는 코드 서식 정리 |
+| `test` | 테스트 추가·수정 |
+| `chore` | 의존성·빌드·CI·설정 등 유지보수 |
+
+예: `docs: clarify database selection criteria`, `feat: add tag navigation`, `chore: update build workflow`.
+글 추가에는 `docs:`를 사용하고, 서로 독립적인 변경은 가능한 한 커밋을 나눕니다.
 
 ## 수정할 곳
 
