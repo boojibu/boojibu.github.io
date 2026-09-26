@@ -9,8 +9,8 @@
 </head>
 <body>
   <a class="skip" href="#main">본문으로 건너뛰기</a>
-  <header class="header wrap">
-    <a class="brand" href="{{ '/' | relative_url }}">boojibu<span>.dev</span></a>
+  <header class="site-header wrap">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="boojibu 홈">boojibu<span aria-hidden="true">.</span></a>
     <nav aria-label="주 메뉴">
       <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>글</a>
       <a href="{{ '/projects/' | relative_url }}" {% if page.url == '/projects/' %}aria-current="page"{% endif %}>프로젝트</a>
@@ -18,7 +18,7 @@
     </nav>
   </header>
   <main id="main" class="wrap" tabindex="-1">{{ content }}</main>
-  <footer class="footer wrap">
+  <footer class="site-footer wrap">
     <span>© {{ site.time | date: '%Y' }} boojibu</span>
     <div><a href="https://github.com/boojibu">GitHub</a><a href="{{ '/feed.xml' | relative_url }}">RSS</a></div>
   </footer>

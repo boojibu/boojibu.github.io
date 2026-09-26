@@ -2,7 +2,7 @@ name: Check blog build
 on:
   pull_request:
   push:
-    branches: ["feat/blog-foundation"]
+    branches: ["main"]
 permissions:
   contents: read
 jobs:

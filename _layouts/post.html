@@ -3,10 +3,24 @@ layout: default
 ---
 <article class="post">
   <header class="post-header">
-    <a class="back" href="{{ '/' | relative_url }}">← 모든 글</a>
+    <a class="back" href="{{ '/' | relative_url }}">← 글 목록</a>
     <h1>{{ page.title | escape }}</h1>
-    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time>
-    <div class="tags">{% for tag in page.tags %}<span>{{ tag | escape }}</span>{% endfor %}</div>
+    <div class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time>
+      {% if page.tags.size > 0 %}
+      <ul class="tags" aria-label="태그">{% for tag in page.tags %}<li>{{ tag | escape }}</li>{% endfor %}</ul>
+      {% endif %}
+    </div>
   </header>
   <div class="prose">{{ content }}</div>
+  {% if page.previous or page.next %}
+  <nav class="post-navigation" aria-label="다른 글">
+    {% if page.previous %}
+    <a href="{{ page.previous.url | relative_url }}"><span>이전 글</span>{{ page.previous.title | escape }}</a>
+    {% endif %}
+    {% if page.next %}
+    <a href="{{ page.next.url | relative_url }}"><span>다음 글</span>{{ page.next.title | escape }}</a>
+    {% endif %}
+  </nav>
+  {% endif %}
 </article>
