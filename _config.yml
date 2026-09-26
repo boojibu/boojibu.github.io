@@ -1,0 +1,28 @@
+title: boojibu.dev
+description: 백엔드와 데이터 엔지니어링, 문제를 풀어가는 기록.
+url: https://boojibu.github.io
+baseurl: ""
+lang: ko
+timezone: Asia/Seoul
+markdown: kramdown
+highlighter: rouge
+permalink: /posts/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+exclude:
+  - README.md
+  - templates
+  - Gemfile
+  - Gemfile.lock
+  - vendor

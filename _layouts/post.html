@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-header">
+    <a class="back" href="{{ '/' | relative_url }}">← 모든 글</a>
+    <h1>{{ page.title | escape }}</h1>
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time>
+    <div class="tags">{% for tag in page.tags %}<span>{{ tag | escape }}</span>{% endfor %}</div>
+  </header>
+  <div class="prose">{{ content }}</div>
+</article>
