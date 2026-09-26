@@ -25,6 +25,7 @@ templates는 사이트 배포에서 제외됩니다. 실제 경험을 바탕으�
 ## 커밋 규칙
 
 커밋 제목은 `<type>: <변경 내용>` 형식을 사용합니다. 필요한 경우 `<type>(<scope>): <변경 내용>`으로 범위를 표시합니다.
+type과 scope는 영문으로, 제목의 변경 내용과 상세 본문은 한글로 작성합니다. 제품명·함수명·설정명 등 고유한 기술 용어는 원래 표기를 유지합니다.
 
 | type | 사용 범위 |
 | --- | --- |
@@ -36,7 +37,7 @@ templates는 사이트 배포에서 제외됩니다. 실제 경험을 바탕으�
 | `test` | 테스트 추가·수정 |
 | `chore` | 의존성·빌드·CI·설정 등 유지보수 |
 
-예: `docs: clarify database selection criteria`, `feat: add tag navigation`, `chore: update build workflow`.
+예: `docs: 데이터베이스 선택 근거 보완`, `feat: 태그별 글 탐색 기능 추가`, `chore: 빌드 워크플로 설정 정리`.
 글 추가에는 `docs:`를 사용하고, 서로 독립적인 변경은 가능한 한 커밋을 나눕니다.
 
 ## 수정할 곳
