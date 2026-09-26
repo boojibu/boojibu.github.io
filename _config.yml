@@ -30,6 +30,7 @@ defaults:
     values:
       layout: project
 exclude:
+  - AGENTS.md
   - README.md
   - templates
   - Gemfile
