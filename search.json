@@ -1,0 +1,20 @@
+---
+layout: null
+---
+[
+{% for post in site.posts %}
+  {% assign project = nil %}
+  {% if post.project and post.project != "" %}
+    {% assign project = site.projects | where: "project_id", post.project | first %}
+  {% endif %}
+  {
+    "url": {{ post.url | relative_url | jsonify }},
+    "title": {{ post.title | jsonify }},
+    "description": {{ post.description | default: "" | jsonify }},
+    "content": {{ post.content | strip_html | normalize_whitespace | jsonify }},
+    "tags": {{ post.tags | jsonify }},
+    "project": {{ project.project_id | default: "" | jsonify }},
+    "projectTitle": {{ project.title | default: "" | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]

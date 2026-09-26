@@ -3,6 +3,7 @@ title: "글 제목"
 description: "어떤 문제를 어떻게 해결했는지 한두 문장으로 요약합니다."
 date: 2026-09-26 09:00:00 +0900
 tags: [Backend, Data]
+# project: project-slug  # _projects 문서의 project_id와 일치시킵니다.
 ---
 
 ## 해결할 문제

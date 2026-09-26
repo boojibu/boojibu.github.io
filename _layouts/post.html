@@ -8,9 +8,14 @@ layout: default
     <div class="post-meta">
       <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time>
       {% if page.tags.size > 0 %}
-      <ul class="tags" aria-label="태그">{% for tag in page.tags %}<li>{{ tag | escape }}</li>{% endfor %}</ul>
+      <ul class="tags" aria-label="태그">{% for tag in page.tags %}<li><a href="{{ "/" | relative_url }}?tag={{ tag | url_encode }}">{{ tag | escape }}</a></li>{% endfor %}</ul>
       {% endif %}
     </div>
+    {% assign project = nil %}
+  {% if page.project and page.project != "" %}
+    {% assign project = site.projects | where: "project_id", page.project | first %}
+  {% endif %}
+    {% if project %}<p class="post-project">프로젝트 · <a href="{{ project.url | relative_url }}">{{ project.title | escape }}</a></p>{% endif %}
   </header>
   <div class="prose">{{ content }}</div>
   {% if page.previous or page.next %}

@@ -10,6 +10,10 @@ permalink: /posts/:title/
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
 defaults:
   - scope:
       path: ""
@@ -20,6 +24,11 @@ defaults:
       type: posts
     values:
       layout: post
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
 exclude:
   - README.md
   - templates

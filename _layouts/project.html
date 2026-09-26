@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<article class="project page">
+  <header class="project-header">
+    <a class="back" href="{{ '/projects/' | relative_url }}">← 프로젝트 목록</a>
+    <h1>{{ page.title | escape }}</h1>
+    {% if page.description %}<p class="page-description">{{ page.description | escape }}</p>{% endif %}
+    <dl class="project-details">
+      {% if page.status %}<div><dt>상태</dt><dd>{{ page.status | escape }}</dd></div>{% endif %}
+      {% if page.role %}<div><dt>담당</dt><dd>{{ page.role | escape }}</dd></div>{% endif %}
+      {% if page.period %}<div><dt>기간</dt><dd>{{ page.period | escape }}</dd></div>{% endif %}
+    </dl>
+    {% if page.repository_url or page.demo_url %}
+    <div class="project-resources">
+      {% if page.repository_url %}<a href="{{ page.repository_url | escape }}">저장소</a>{% endif %}
+      {% if page.demo_url %}<a href="{{ page.demo_url | escape }}">서비스</a>{% endif %}
+    </div>
+    {% endif %}
+  </header>
+  <div class="prose">{{ content }}</div>
+  <section class="related-posts" aria-labelledby="related-title">
+    {% assign related = site.posts | where: "project", page.project_id | sort: "date" %}
+    <div class="section-heading"><h2 id="related-title">관련 글</h2><span>{{ related.size }}편 · 작성순</span></div>
+    {% include post-list.html posts=related hide_project=true %}
+    {% if related.size == 0 %}<p class="empty">아직 연결된 글이 없습니다.</p>{% endif %}
+  </section>
+</article>
